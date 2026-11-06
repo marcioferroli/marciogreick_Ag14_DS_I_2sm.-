@@ -1,0 +1,161 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="HotelAurora.MainPage"
+    Title="Hotel Aurora"
+    BackgroundColor="#F6F3ED">
+
+    <ScrollView>
+        <VerticalStackLayout Spacing="0">
+
+            <!-- CABEÇALHO -->
+            <VerticalStackLayout
+                BackgroundColor="#14243A"
+                Padding="24,30"
+                Spacing="8">
+
+                <Label
+                    Text="HOTEL AURORA"
+                    TextColor="#D9AD5B"
+                    FontSize="14"
+                    CharacterSpacing="3"
+                    FontAttributes="Bold"/>
+
+                <Label
+                    Text="Sua estadia começa aqui."
+                    TextColor="White"
+                    FontSize="25"
+                    FontAttributes="Bold"/>
+
+                <Label
+                    Text="Conforto • cuidado • tranquilidade"
+                    TextColor="#D9DDE4"
+                    FontSize="13"/>
+
+            </VerticalStackLayout>
+
+            <!-- FORMULÁRIO -->
+            <VerticalStackLayout
+                Padding="20"
+                Spacing="14">
+
+                <Label
+                    Text="FAÇA SUA RESERVA"
+                    FontSize="19"
+                    FontAttributes="Bold"
+                    TextColor="#14243A"/>
+
+                <Label Text="Nome do hóspede"
+                       TextColor="#536176"/>
+
+                <Entry
+                    x:Name="HospedeEntry"
+                    Placeholder="Digite seu nome"
+                    BackgroundColor="White"
+                    TextColor="#243247"/>
+
+                <Label Text="Acomodação"
+                       TextColor="#536176"/>
+
+                <Picker
+                    x:Name="AccommodationPicker"
+                    Title="Selecione a acomodação"
+                    BackgroundColor="White"
+                    TextColor="#243247">
+
+                    <Picker.Items>
+                        <x:String>Suíte Standard</x:String>
+                        <x:String>Suíte Luxo</x:String>
+                        <x:String>Suíte Família</x:String>
+                    </Picker.Items>
+
+                </Picker>
+
+                <Label Text="Quantidade de adultos"
+                       TextColor="#536176"/>
+
+                <HorizontalStackLayout Spacing="15">
+                    <Stepper
+                        x:Name="AdultosStepper"
+                        Minimum="1"
+                        Maximum="8"
+                        Value="1"
+                        ValueChanged="OnAdultosChanged"/>
+
+                    <Label
+                        x:Name="AdultosLabel"
+                        Text="1"
+                        VerticalOptions="Center"
+                        TextColor="#14243A"/>
+                </HorizontalStackLayout>
+
+                <Label Text="Quantidade de crianças"
+                       TextColor="#536176"/>
+
+                <HorizontalStackLayout Spacing="15">
+                    <Stepper
+                        x:Name="CriancasStepper"
+                        Minimum="0"
+                        Maximum="6"
+                        Value="0"
+                        ValueChanged="OnCriancasChanged"/>
+
+                    <Label
+                        x:Name="CriancasLabel"
+                        Text="0"
+                        VerticalOptions="Center"
+                        TextColor="#14243A"/>
+                </HorizontalStackLayout>
+
+                <Label Text="Data de check-in"
+                       TextColor="#536176"/>
+
+                <DatePicker
+                    x:Name="CheckInPicker"
+                    Format="dd/MM/yyyy"
+                    BackgroundColor="White"
+                    DateSelected="OnCheckInDateSelected"/>
+
+                <Label Text="Data de check-out"
+                       TextColor="#536176"/>
+
+                <DatePicker
+                    x:Name="CheckOutPicker"
+                    Format="dd/MM/yyyy"
+                    BackgroundColor="White"/>
+
+                <Button
+                    Text="CALCULAR E RESERVAR"
+                    BackgroundColor="#D9AD5B"
+                    TextColor="#14243A"
+                    FontAttributes="Bold"
+                    CornerRadius="12"
+                    HeightRequest="52"
+                    Clicked="OnReservarClicked"/>
+
+                <Label
+                    x:Name="ResultadoLabel"
+                    TextColor="#14243A"
+                    FontSize="14"/>
+
+                <Button
+                    Text="VER MINHAS RESERVAS"
+                    BackgroundColor="#14243A"
+                    TextColor="White"
+                    CornerRadius="12"
+                    HeightRequest="48"
+                    Clicked="OnHistoricoClicked"/>
+
+                <Label
+                    Text="Check-in a partir das 14h • Check-out até 12h"
+                    TextColor="#647084"
+                    FontSize="12"
+                    HorizontalTextAlignment="Center"/>
+
+            </VerticalStackLayout>
+
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>
